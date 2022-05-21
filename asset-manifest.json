@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SimplifyText-Gazette/static/css/main.abd64e84.css",
+    "main.js": "/SimplifyText-Gazette/static/js/main.112e0dce.js",
+    "static/js/787.98b4f0b2.chunk.js": "/SimplifyText-Gazette/static/js/787.98b4f0b2.chunk.js",
+    "index.html": "/SimplifyText-Gazette/index.html",
+    "main.abd64e84.css.map": "/SimplifyText-Gazette/static/css/main.abd64e84.css.map",
+    "main.112e0dce.js.map": "/SimplifyText-Gazette/static/js/main.112e0dce.js.map",
+    "787.98b4f0b2.chunk.js.map": "/SimplifyText-Gazette/static/js/787.98b4f0b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd64e84.css",
+    "static/js/main.112e0dce.js"
+  ]
+}
