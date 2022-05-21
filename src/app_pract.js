@@ -3,15 +3,16 @@ import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Alert from './components/Alert';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 
 function App() {
   let [mode, setMode] = useState('dark')
   let [myAlert, setAlert] = useState({
-    msg: "message",
-    mode: "mode"
+    msg: "UseMe",
+    mode: "Welcome"
   });
   let showAlert = (message, mode) => {
     setAlert({
@@ -25,10 +26,10 @@ function App() {
   }
   let toggleMode = () => {
     setInterval(() => {
-      document.title='textUtils is Amazing';
+      document.title = 'textUtils is Amazing';
     }, 2000);
     setInterval(() => {
-      document.title='Install TextUtils Now';
+      document.title = 'Install TextUtils Now';
     }, 1500);
 
     if (mode === 'dark') {
@@ -47,17 +48,25 @@ function App() {
 
   return (
     <>
+      <Router>
 
-      <Navbar title="TextUtils" aboutText="AboutMe" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={myAlert}/>
-      <div className="container my-4">
-        <TextForm heading="Enter the Text To Analyse" mode={mode} showAlert={showAlert} />
-        <About/>
+        <Navbar title="TextUtils" aboutText="AboutMe" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={myAlert} />
+        <div className="container my-4">
+        <Routes>
+          <Route exact path="/" element={<TextForm heading="Enter the Text To Analyse" mode={mode} showAlert={showAlert} />}/>
+          {/* <Route exact path="/about" element={<About/>}/> */}
+          {/* withouut exact path  bhi  chalega niche but not recommondate */}
+          <Route  path="/about" element={<About/>}/>  
 
+        </Routes>
+        </div>
 
-      </div>
+      </Router>
     </>
   );
 }
+
+
 
 export default App;
